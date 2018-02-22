@@ -22,6 +22,7 @@ namespace Livraria.Models
         public DateTime Data { get; set; }
 
         [Display(Name = "Nota Fiscal")]
+        [MaxLength(20)]
         public string NotaFiscal { get; set; }
 
         public int Quantidade { get; set; }

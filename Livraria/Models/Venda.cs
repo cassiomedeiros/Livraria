@@ -20,6 +20,7 @@ namespace Livraria.Models
 
         [Required]
         [Display(Name = "Nota Fiscal")]
+        [MaxLength(20)]
         public string NotaFiscal { get; set; }
 
         [Required]

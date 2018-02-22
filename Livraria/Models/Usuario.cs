@@ -11,13 +11,16 @@ namespace Livraria.Models
         public int UsuarioId { get; set; }
 
         [Required]
+        [MaxLength(50)]
         public string Nome { get; set; }
         
         [Required]
         [Display(Name = "E-mail")]
+        [MaxLength (50)]
         public string Email { get; set; }
 
         [Required]
+        [MaxLength(20)]
         public string Senha { get; set; }
 
         public bool Ativo { get; set; }

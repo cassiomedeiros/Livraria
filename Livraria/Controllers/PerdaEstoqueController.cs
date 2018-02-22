@@ -34,6 +34,9 @@ namespace Livraria.Controllers
             {
                 return HttpNotFound();
             }
+
+            perdaEstoque.EntradaEstoque = db.EntradaEstoque.Find(perdaEstoque.EntradaEstoqueId);
+
             return View(perdaEstoque);
         }
 

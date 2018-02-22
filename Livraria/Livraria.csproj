@@ -95,8 +95,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\LivrariaDB.mdf" />
-    <Content Include="App_Data\LivrariaDB_log.ldf">
+    <Content Include="DB\LivrariaDB.mdf" />
+    <Content Include="DB\LivrariaDB_log.ldf">
       <DependentUpon>LivrariaDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
@@ -212,7 +212,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

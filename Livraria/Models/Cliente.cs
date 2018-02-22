@@ -18,12 +18,15 @@ namespace Livraria.Models
         public bool PessoaFisica { get; set; }
 
         [Display(Name = "CNPJ/CPF")]
+        [MaxLength(14)]
         public string CNPJCPF { get; set; }
 
         [Display(Name = "Nome/Nome Fantasia")]
+        [MaxLength(100)]
         public string Nome { get; set; }
 
         [Display(Name = "Razão Social")]
+        [MaxLength(100)]
         public string RazaoSocial { get; set; }
 
         public ICollection<Venda> Vendas { get; set; }

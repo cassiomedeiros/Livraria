@@ -11,6 +11,7 @@ namespace Livraria.Models
         public int AutorId { get; set; }
 
         [Required]
+        [MaxLength(100)]
         public string Nome { get; set; }
 
         public ICollection<Livro> Livros {get; set;}

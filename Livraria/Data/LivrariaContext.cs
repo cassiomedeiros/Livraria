@@ -12,7 +12,6 @@ namespace Livraria.Data
     {
         public LivrariaContext() : base("ConnectionDB")
         {
-
             //Database.SetInitializer<LivrariaContext>(new DropCreateDatabaseIfModelChanges<LivrariaContext>());
         }
 
@@ -33,24 +32,17 @@ namespace Livraria.Data
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Properties()
-                       .Where(p => p.Name == p.ReflectedType.Name + "Id")
-                       .Configure(p => p.IsKey());
+                .Where(p => p.Name == p.ReflectedType.Name + "Id")
+                .Configure(p => p.IsKey());
             modelBuilder.Properties<string>()
-                   .Configure(p => p.HasColumnType("varchar"));
+                .Configure(p => p.HasColumnType("varchar"));
             modelBuilder.Properties<string>()
                   .Configure(p => p.HasMaxLength(100));
 
-            //modelBuilder.Entity<UsuarioEmpresa>().HasKey(ue =>
-            //new
-            //{
-            //    ue.UsuarioId,
-            //    ue.EmpresaId
-            //});
-
             modelBuilder.Entity<UsuarioEmpresa>()
-            .HasRequired(ue => ue.Usuario)
-            .WithMany(ue => ue.UsuariosEmpresas)
-            .HasForeignKey(ue => ue.UsuarioId);
+                .HasRequired(ue => ue.Usuario)
+                .WithMany(ue => ue.UsuariosEmpresas)
+                .HasForeignKey(ue => ue.UsuarioId);
 
             modelBuilder.Entity<UsuarioEmpresa>()
                 .HasRequired(t => t.Empresa)

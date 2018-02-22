@@ -11,14 +11,17 @@ namespace Livraria.Models
         public int EmpresaId { get; set; }
 
         [Required]
+        [MaxLength(14)]
         public string CNPJ { get; set; }
 
         [Required]
         [Display(Name = "Nome Fantasia")]
+        [MaxLength(100)]
         public string NomeFantasia { get; set; }
 
         [Required]
         [Display(Name = "Razão Social")]
+        [MaxLength(100)]
         public string RazaoSocial { get; set; }
 
         public ICollection<Usuario> Usuarios { get; set; }

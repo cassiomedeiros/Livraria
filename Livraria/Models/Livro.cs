@@ -16,6 +16,7 @@ namespace Livraria.Models
         public Empresa Empresa { get; set; }
 
         [Required]
+        [MaxLength(100)]
         public string Nome { get; set; }
 
         [Required]
