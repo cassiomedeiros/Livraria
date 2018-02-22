@@ -1,0 +1,41 @@
+﻿@model Livraria.Models.PerdaEstoque
+
+@{
+    ViewBag.Title = "Detalhes da Perda de Estoque";
+}
+
+<h2>Detalhes de Perda de Estoque</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EntradaEstoque.NotaFiscal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntradaEstoque.NotaFiscal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PerdaEstoqueId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

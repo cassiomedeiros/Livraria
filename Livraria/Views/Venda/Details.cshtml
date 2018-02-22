@@ -1,0 +1,65 @@
+﻿@model Livraria.Models.Venda
+
+@{
+    ViewBag.Title = "Detalhes da Venda";
+}
+
+<h2>Detalhes da Venda</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.CNPJCPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaFiscal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaFiscal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorUnitario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.VendaId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

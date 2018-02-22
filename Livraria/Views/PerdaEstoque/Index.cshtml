@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Livraria.Models.PerdaEstoque>
+
+@{
+    ViewBag.Title = "Perdas de Estoque";
+}
+
+<h2>Perdas de Estoque</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EntradaEstoque.NotaFiscal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntradaEstoque.NotaFiscal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantidade)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.PerdaEstoqueId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.PerdaEstoqueId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.PerdaEstoqueId })
+        </td>
+    </tr>
+}
+
+</table>

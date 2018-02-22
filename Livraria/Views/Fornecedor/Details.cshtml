@@ -1,0 +1,57 @@
+﻿@model Livraria.Models.Fornecedor
+
+@{
+    ViewBag.Title = "Detalhes do Fornecedor";
+}
+
+<h2>Detalhes do Fornecedor</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PessoaFisica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PessoaFisica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNPJCPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNPJCPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.FornecedorId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

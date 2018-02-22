@@ -1,0 +1,48 @@
+﻿@model Livraria.Models.PerdaEstoque
+
+@{
+    ViewBag.Title = "Exclusão de Perda de Estoque";
+}
+
+<h2>Delete</h2>
+
+<h3>Tem certeza de que deseja excluir?</h3>
+<div>
+    <h4>PerdaEstoque</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EntradaEstoque.NotaFiscal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntradaEstoque.NotaFiscal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

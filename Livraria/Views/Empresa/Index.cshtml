@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Livraria.Models.Empresa>
+
+@{
+    ViewBag.Title = "Empresas";
+}
+
+<h2>Empresas</h2>
+
+<p>
+    @Html.ActionLink("Nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.EmpresaId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.EmpresaId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.EmpresaId })
+        </td>
+    </tr>
+}
+
+</table>

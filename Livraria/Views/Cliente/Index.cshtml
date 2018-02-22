@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Livraria.Models.Cliente>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Clientes</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Empresa
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoaFisica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNPJCPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoaFisica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNPJCPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ClienteId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ClienteId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ClienteId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,32 @@
+﻿@model Livraria.Models.UsuarioEmpresa
+
+@{
+    ViewBag.Title = "Detalhes de Usuário x Empresa";
+}
+
+<h2>Detalhes do Usuário x Empresa</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Empresa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
+        </dd>
+
+        <dt>
+            Usuário
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>

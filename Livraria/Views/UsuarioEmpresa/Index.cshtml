@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Livraria.Models.UsuarioEmpresa>
+
+@{
+    ViewBag.Title = "Usuários x Empresas";
+}
+
+<h2>Usuários x Empresa</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Empresa
+        </th>
+        <th>
+            Usuário
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Detalhes", "Details", new {  id = item.UsuarioEmpresaId  }) |
+            @Html.ActionLink("Excluir", "Delete", new { id = item.UsuarioEmpresaId })
+        </td>
+    </tr>
+}
+
+</table>
